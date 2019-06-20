@@ -1,0 +1,7 @@
+bin/*
+obj/*
+*.cbp
+*.layout
+*.depend
+SDL2.dll
+
