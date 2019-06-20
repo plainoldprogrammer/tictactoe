@@ -7,6 +7,7 @@ int main(int argc,char *argv[])
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		std::cout << "Failed to initialize the SDL2 library\n";
+		std::cout << "SDL2 Error: " << SDL_GetError() << "\n";
 		return -1;
 	}
 
@@ -15,6 +16,7 @@ int main(int argc,char *argv[])
 	if (!window)
 	{
 		std::cout << "Failed to create window\n";
+		std::cout << "SDL2 Error: " << SDL_GetError() << "\n";
 		return -1;
 	}
 
@@ -23,13 +25,24 @@ int main(int argc,char *argv[])
 	if (!window_surface)
 	{
 		std::cout << "Failed to get the surface from the window\n";
+		std::cout << "SDL2 Error: " << SDL_GetError() << "\n";
 		return -1;
 	}
 
-	SDL_UpdateWindowSurface(window);
+	bool keep_window_open = true;
+	while (keep_window_open)
+	{
+		SDL_Event e;
+		while (SDL_PollEvent(&e) > 0)
+		{
+			switch (e.type)
+			{
+				case SDL_QUIT:
+					keep_window_open = false;
+					break;
+			}
 
-	SDL_Delay(5000);
-
-
-    return 0;
+			SDL_UpdateWindowSurface(window);
+		}
+	}
 }
