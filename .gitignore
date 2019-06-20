@@ -4,4 +4,5 @@ obj/*
 *.layout
 *.depend
 SDL2.dll
+myeasylog.log
 

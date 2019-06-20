@@ -1,14 +1,19 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <Board.h>
+#include "easylogging++.h"
+
+INITIALIZE_EASYLOGGINGPP;
 
 
 int main(int argc,char *argv[])
 {
+	LOG (INFO) << "Start of the game";
+
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
-		std::cout << "Failed to initialize the SDL2 library\n";
-		std::cout << "SDL2 Error: " << SDL_GetError() << "\n";
+		LOG(INFO) << "Failed to initialize the SDL2 library\n";
+		LOG(INFO) << "SDL2 Error: " << SDL_GetError() << "\n";
 		return -1;
 	}
 
@@ -16,8 +21,8 @@ int main(int argc,char *argv[])
 
 	if (!window)
 	{
-		std::cout << "Failed to create window\n";
-		std::cout << "SDL2 Error: " << SDL_GetError() << "\n";
+		LOG(INFO) << "Failed to create window\n";
+		LOG(INFO) << "SDL2 Error: " << SDL_GetError() << "\n";
 		return -1;
 	}
 
@@ -25,8 +30,8 @@ int main(int argc,char *argv[])
 
 	if (!window_surface)
 	{
-		std::cout << "Failed to get the surface from the window\n";
-		std::cout << "SDL2 Error: " << SDL_GetError() << "\n";
+		LOG(INFO) << "Failed to get the surface from the window\n";
+		LOG(INFO) << "SDL2 Error: " << SDL_GetError() << "\n";
 		return -1;
 	}
 
@@ -50,4 +55,6 @@ int main(int argc,char *argv[])
 			SDL_UpdateWindowSurface(window);
 		}
 	}
+
+	LOG(INFO) << "End of the game";
 }
