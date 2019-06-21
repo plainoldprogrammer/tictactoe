@@ -8,9 +8,9 @@ Circle::Circle(SDL_Renderer *window_renderer)
 
 	circleStruct.radius = 60;
 	circleStruct.old_x = 118;
-	circleStruct.old_y = 90;
+	circleStruct.old_y = 80;
 	circleStruct.h = 118;
-	circleStruct.k = 90;
+	circleStruct.k = 80;
 	circleStruct.step = 0.002;
 }
 
