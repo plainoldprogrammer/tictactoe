@@ -1,7 +1,8 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <Board.h>
 #include "easylogging++.h"
+#include "Board.h"
+#include "Circle.h"
 
 INITIALIZE_EASYLOGGINGPP;
 
@@ -35,12 +36,15 @@ int main(int argc,char *argv[])
 		return -1;
 	}
 
-	Board *board = new Board(window);
+	SDL_Renderer *m_window_renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	Board *board = new Board(m_window_renderer);
+	Circle *circle = new Circle(m_window_renderer);
 
 	bool keep_window_open = true;
 	while (keep_window_open)
 	{
 		board->drawBoard();
+		circle->drawCircle();
 
 		SDL_Event e;
 		while (SDL_PollEvent(&e) > 0)
@@ -50,11 +54,22 @@ int main(int argc,char *argv[])
 				case SDL_QUIT:
 					keep_window_open = false;
 					break;
+				case SDL_MOUSEBUTTONDOWN:
+					if (e.button.button == SDL_BUTTON_LEFT)
+					{
+						LOG(INFO) << "Left button click of the mouse at (" << e.button.x << ", " << e.button.y << ").";
+					}
+					break;
 			}
 
 			SDL_UpdateWindowSurface(window);
 		}
 	}
+
+	delete circle;
+	delete board;
+	delete m_window_renderer;
+	delete window;
 
 	LOG(INFO) << "End of the game";
 }

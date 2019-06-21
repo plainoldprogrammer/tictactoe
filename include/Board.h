@@ -7,14 +7,13 @@
 class Board
 {
 	public:
-		Board(SDL_Window *window);
+		Board(SDL_Renderer *);
 		virtual ~Board();
 		void drawBoard();
 
 	protected:
 
 	private:
-		SDL_Window *window;
 		SDL_Renderer *m_window_renderer;
 };
 

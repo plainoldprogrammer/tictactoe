@@ -1,15 +1,14 @@
 #include "Board.h"
 
-Board::Board(SDL_Window *window)
+Board::Board(SDL_Renderer *window_renderer)
 {
-	m_window_renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	m_window_renderer = window_renderer;
 }
 
 Board::~Board()
 {
 	//dtor
 }
-
 
 void Board::drawBoard()
 {
