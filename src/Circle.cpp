@@ -2,15 +2,15 @@
 #include "Circle.h"
 
 
-Circle::Circle(SDL_Renderer *window_renderer)
+Circle::Circle(SDL_Renderer *window_renderer, int x, int y)
 {
 	m_window_renderer = window_renderer;
 
 	circleStruct.radius = 60;
-	circleStruct.old_x = 118;
-	circleStruct.old_y = 80;
-	circleStruct.h = 118;
-	circleStruct.k = 80;
+	circleStruct.old_x = x;
+	circleStruct.old_y = y;
+	circleStruct.h = x;
+	circleStruct.k = y;
 	circleStruct.step = 0.002;
 }
 

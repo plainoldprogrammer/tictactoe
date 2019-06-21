@@ -38,13 +38,11 @@ int main(int argc,char *argv[])
 
 	SDL_Renderer *m_window_renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	Board *board = new Board(m_window_renderer);
-	Circle *circle = new Circle(m_window_renderer);
 
 	bool keep_window_open = true;
 	while (keep_window_open)
 	{
 		board->drawBoard();
-		circle->drawCircle();
 
 		SDL_Event e;
 		while (SDL_PollEvent(&e) > 0)
@@ -58,6 +56,71 @@ int main(int argc,char *argv[])
 					if (e.button.button == SDL_BUTTON_LEFT)
 					{
 						LOG(INFO) << "Left button click of the mouse at (" << e.button.x << ", " << e.button.y << ").";
+
+						if (e.button.x >= 20 && e.button.x <= 210 &&
+							e.button.y >= 20 && e.button.y <= 160)
+						{
+							Circle *circle = new Circle(m_window_renderer, 118, 80);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 223 && e.button.x <= 425 &&
+								 e.button.y >= 20 && e.button.y <= 160)
+						{
+							Circle *circle = new Circle(m_window_renderer, 324, 80);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 435 && e.button.x <= 620 &&
+								 e.button.y >= 20 && e.button.y <= 160)
+						{
+							Circle *circle = new Circle(m_window_renderer,  529, 80);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 20 && e.button.x <= 210 &&
+								 e.button.y >= 170 && e.button.y <= 320)
+						{
+							Circle *circle = new Circle(m_window_renderer, 118, 245);
+							circle->drawCircle();
+							delete circle;
+
+						}
+						else if (e.button.x >= 233 && e.button.x <= 425 &&
+								 e.button.y >= 170 && e.button.y <= 320)
+						{
+							Circle *circle = new Circle(m_window_renderer, 324, 245);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 435 && e.button.x <= 620 &&
+								 e.button.y >= 170 && e.button.y <= 320)
+						{
+							Circle *circle = new Circle(m_window_renderer, 529, 245);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 20 && e.button.x <= 210 &&
+								 e.button.y >= 330 && e.button.y <= 460)
+						{
+							Circle *circle = new Circle(m_window_renderer, 118, 410);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 233 && e.button.x <= 425 &&
+								 e.button.y >= 330 && e.button.y <= 460)
+						{
+							Circle *circle = new Circle(m_window_renderer, 324, 410);
+							circle->drawCircle();
+							delete circle;
+						}
+						else if (e.button.x >= 435 && e.button.x <= 620 &&
+								 e.button.y >= 330 && e.button.y <= 460)
+						{
+							Circle *circle = new Circle(m_window_renderer, 529, 410);
+							circle->drawCircle();
+							delete circle;
+						}
 					}
 					break;
 			}
@@ -66,7 +129,6 @@ int main(int argc,char *argv[])
 		}
 	}
 
-	delete circle;
 	delete board;
 	delete m_window_renderer;
 	delete window;

@@ -21,7 +21,7 @@ class Circle
 	} circleStruct;
 
 	public:
-		Circle(SDL_Renderer *);
+		Circle(SDL_Renderer *, int, int);
 		virtual ~Circle();
 		void drawCircle();
 
