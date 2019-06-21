@@ -8,18 +8,6 @@
 
 class Circle
 {
-	struct CircleProperties
-	{
-		int radius;
-		int h;
-		int k;
-		int new_x;
-		int new_y;
-		int old_x;
-		int old_y;
-		float step;
-	} circleStruct;
-
 	public:
 		Circle(SDL_Renderer *, int, int);
 		virtual ~Circle();
@@ -28,6 +16,14 @@ class Circle
 	protected:
 
 	private:
+		int radius;
+		int h;
+		int k;
+		int new_x;
+		int new_y;
+		int old_x;
+		int old_y;
+		float step;
 		SDL_Renderer *m_window_renderer;
 };
 
