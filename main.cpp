@@ -75,6 +75,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 223 && e.button.x <= 425 &&
 								 e.button.y >= 20 && e.button.y <= 160)
@@ -91,6 +93,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 435 && e.button.x <= 620 &&
 								 e.button.y >= 20 && e.button.y <= 160)
@@ -107,6 +111,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 20 && e.button.x <= 210 &&
 								 e.button.y >= 170 && e.button.y <= 320)
@@ -123,6 +129,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 233 && e.button.x <= 425 &&
 								 e.button.y >= 170 && e.button.y <= 320)
@@ -139,6 +147,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 435 && e.button.x <= 620 &&
 								 e.button.y >= 170 && e.button.y <= 320)
@@ -155,6 +165,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 20 && e.button.x <= 210 &&
 								 e.button.y >= 330 && e.button.y <= 460)
@@ -171,6 +183,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 233 && e.button.x <= 425 &&
 								 e.button.y >= 330 && e.button.y <= 460)
@@ -187,6 +201,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 						else if (e.button.x >= 435 && e.button.x <= 620 &&
 								 e.button.y >= 330 && e.button.y <= 460)
@@ -203,6 +219,8 @@ int main(int argc,char *argv[])
 								cross->drawCross();
 								delete cross;
 							}
+
+							circleTurn = !circleTurn;
 						}
 					}
 					break;
