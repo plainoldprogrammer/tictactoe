@@ -5,8 +5,19 @@
 #include "Circle.h"
 #include "Cross.h"
 
+
+enum Piece { EmptyPiece, CirclePiece, CrossPiece };
+
 INITIALIZE_EASYLOGGINGPP;
 
+Piece logicalBoard[3][3] = {
+						{ EmptyPiece, EmptyPiece, EmptyPiece },
+						{ EmptyPiece, EmptyPiece, EmptyPiece },
+						{ EmptyPiece, EmptyPiece, EmptyPiece }
+					};
+
+void checkGameState();
+void printBoard();
 
 int main(int argc,char *argv[])
 {
@@ -68,12 +79,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 118, 80);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[0][0] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 20, 20);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[0][0] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -86,12 +101,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 324, 80);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[0][1] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 233, 20);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[0][1] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -104,12 +123,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer,  529, 80);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[0][2] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 445, 20);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[0][2] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -122,12 +145,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 118, 245);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[1][0] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 20, 180);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[1][0] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -140,12 +167,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 324, 245);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[1][1] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 233, 180);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[1][1] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -158,12 +189,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 529, 245);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[1][2] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 445, 180);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[1][2] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -176,12 +211,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 118, 410);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[2][0] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 20, 340);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[2][0] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -194,12 +233,16 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 324, 410);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[2][1] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 233, 340);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[2][1] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
@@ -212,16 +255,22 @@ int main(int argc,char *argv[])
 								Circle *circle = new Circle(m_window_renderer, 529, 410);
 								circle->drawCircle();
 								delete circle;
+
+								logicalBoard[2][2] = CirclePiece;
 							}
 							else
 							{
 								Cross *cross = new Cross(m_window_renderer, 445, 340);
 								cross->drawCross();
 								delete cross;
+
+								logicalBoard[2][2] = CrossPiece;
 							}
 
 							circleTurn = !circleTurn;
 						}
+
+						printBoard();
 					}
 					break;
 			}
@@ -235,4 +284,34 @@ int main(int argc,char *argv[])
 	delete window;
 
 	LOG(INFO) << "End of the game";
+}
+
+void checkGameState()
+{
+}
+
+void printBoard()
+{
+	LOG(INFO) << std::endl << "Board";
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (logicalBoard[i][j] == EmptyPiece)
+			{
+				std::cout << "-" << "\t";
+			}
+			else if (logicalBoard[i][j] == CirclePiece)
+			{
+				std::cout << "O" << "\t";
+			}
+			else if (logicalBoard[i][j] == CrossPiece)
+			{
+				std::cout << "X" << "\t";
+			}
+		}
+
+		std::cout << std::endl;
+	}
 }
