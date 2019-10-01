@@ -12,6 +12,8 @@ int main(int argc,char *argv[])
 {
 	LOG (INFO) << "Start of the game";
 
+	boolean circleTurn = false;
+
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		LOG(INFO) << "Failed to initialize the SDL2 library\n";
@@ -61,9 +63,18 @@ int main(int argc,char *argv[])
 						if (e.button.x >= 20 && e.button.x <= 210 &&
 							e.button.y >= 20 && e.button.y <= 160)
 						{
-							Circle *circle = new Circle(m_window_renderer, 118, 80);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 118, 80);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 20, 20);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 223 && e.button.x <= 425 &&
 								 e.button.y >= 20 && e.button.y <= 160)
