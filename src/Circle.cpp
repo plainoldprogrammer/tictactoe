@@ -25,7 +25,7 @@ void Circle::drawCircle()
 	{
 		new_x = h + (radius * cos ( theta ));
 		new_y = k - (radius * sin ( theta ));
-		SDL_RenderDrawLine (m_window_renderer, old_x, old_y,
+		SDL_RenderDrawLine(m_window_renderer, old_x, old_y,
 						 new_x, new_y );
 	}
 }

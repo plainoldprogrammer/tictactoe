@@ -7,13 +7,15 @@
 class Cross
 {
     public:
-        Cross();
+        Cross(SDL_Renderer *, int, int);
         virtual ~Cross();
         void drawCross();
 
     protected:
 
     private:
+		int x;
+		int y;
         SDL_Renderer *m_window_renderer;
 };
 

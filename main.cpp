@@ -3,6 +3,7 @@
 #include "easylogging++.h"
 #include "Board.h"
 #include "Circle.h"
+#include "Cross.h"
 
 INITIALIZE_EASYLOGGINGPP;
 
