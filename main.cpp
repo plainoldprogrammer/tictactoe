@@ -79,59 +79,130 @@ int main(int argc,char *argv[])
 						else if (e.button.x >= 223 && e.button.x <= 425 &&
 								 e.button.y >= 20 && e.button.y <= 160)
 						{
-							Circle *circle = new Circle(m_window_renderer, 324, 80);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 324, 80);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 233, 20);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 435 && e.button.x <= 620 &&
 								 e.button.y >= 20 && e.button.y <= 160)
 						{
-							Circle *circle = new Circle(m_window_renderer,  529, 80);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer,  529, 80);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 445, 20);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 20 && e.button.x <= 210 &&
 								 e.button.y >= 170 && e.button.y <= 320)
 						{
-							Circle *circle = new Circle(m_window_renderer, 118, 245);
-							circle->drawCircle();
-							delete circle;
-
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 118, 245);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 20, 180);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 233 && e.button.x <= 425 &&
 								 e.button.y >= 170 && e.button.y <= 320)
 						{
-							Circle *circle = new Circle(m_window_renderer, 324, 245);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 324, 245);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 233, 180);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 435 && e.button.x <= 620 &&
 								 e.button.y >= 170 && e.button.y <= 320)
 						{
-							Circle *circle = new Circle(m_window_renderer, 529, 245);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 529, 245);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 445, 180);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 20 && e.button.x <= 210 &&
 								 e.button.y >= 330 && e.button.y <= 460)
 						{
-							Circle *circle = new Circle(m_window_renderer, 118, 410);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 118, 410);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 20, 340);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 233 && e.button.x <= 425 &&
 								 e.button.y >= 330 && e.button.y <= 460)
 						{
-							Circle *circle = new Circle(m_window_renderer, 324, 410);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 324, 410);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 233, 340);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 						else if (e.button.x >= 435 && e.button.x <= 620 &&
 								 e.button.y >= 330 && e.button.y <= 460)
 						{
-							Circle *circle = new Circle(m_window_renderer, 529, 410);
-							circle->drawCircle();
-							delete circle;
+							if (circleTurn)
+							{
+								Circle *circle = new Circle(m_window_renderer, 529, 410);
+								circle->drawCircle();
+								delete circle;
+							}
+							else
+							{
+								Cross *cross = new Cross(m_window_renderer, 445, 340);
+								cross->drawCross();
+								delete cross;
+							}
 						}
 					}
 					break;
