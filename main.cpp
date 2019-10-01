@@ -294,6 +294,7 @@ void checkGameState()
 	bool gameWon = false;
 	std::string winnerLocation = "";
 
+	// Check if there is a winner by row
 	if ( (logicalBoard[0][0] == logicalBoard[0][1]) && (logicalBoard[0][1] == logicalBoard[0][2]) && (logicalBoard[0][0] != EmptyPiece) )
 	{
 		gameWon = true;
@@ -308,6 +309,23 @@ void checkGameState()
 	{
 		gameWon = true;
 		winnerLocation = "Third Row";
+	}
+
+	// Check if there is a winner by column
+	if ( (logicalBoard[0][0] == logicalBoard[1][0]) && (logicalBoard[1][0] == logicalBoard[2][0]) && (logicalBoard[0][0] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "First Column";
+	}
+	else if ( (logicalBoard[0][1] == logicalBoard[1][1]) && (logicalBoard[1][1] == logicalBoard[2][1]) && (logicalBoard[0][1] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "Second Column";
+	}
+	else if ( (logicalBoard[0][2] == logicalBoard[1][2]) && (logicalBoard[1][2] == logicalBoard[2][2]) && (logicalBoard[0][2] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "Third Column";
 	}
 
 	if (gameWon)
