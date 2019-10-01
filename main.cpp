@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <SDL2/SDL.h>
 #include "easylogging++.h"
 #include "Board.h"
@@ -271,6 +272,7 @@ int main(int argc,char *argv[])
 						}
 
 						printBoard();
+						checkGameState();
 					}
 					break;
 			}
@@ -288,6 +290,30 @@ int main(int argc,char *argv[])
 
 void checkGameState()
 {
+	Piece winnerPiece = EmptyPiece;
+	bool gameWon = false;
+	std::string winnerLocation = "";
+
+	if ( (logicalBoard[0][0] == logicalBoard[0][1]) && (logicalBoard[0][1] == logicalBoard[0][2]) && (logicalBoard[0][0] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "First Row";
+	}
+	else if ( (logicalBoard[1][0] == logicalBoard[1][1]) && (logicalBoard[1][1] == logicalBoard[1][2]) && (logicalBoard[1][0] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "Second Row";
+	}
+	else if ( (logicalBoard[2][0] == logicalBoard[2][1]) && (logicalBoard[2][1] == logicalBoard[2][2]) && (logicalBoard[2][0] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "Third Row";
+	}
+
+	if (gameWon)
+	{
+		LOG(INFO) << std::endl << "\tWIN: " << winnerLocation << std::endl;
+	}
 }
 
 void printBoard()
