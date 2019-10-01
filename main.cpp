@@ -328,6 +328,18 @@ void checkGameState()
 		winnerLocation = "Third Column";
 	}
 
+	// Check if there is a winner by diagonal
+	if ( (logicalBoard[0][2] == logicalBoard[1][1]) && (logicalBoard[1][1] == logicalBoard[0][2]) && (logicalBoard[0][2] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "Normal Diagonal";
+	}
+	else if ( (logicalBoard[0][0] == logicalBoard[1][1]) && (logicalBoard[1][1] == logicalBoard[2][2]) && (logicalBoard[0][0] != EmptyPiece) )
+	{
+		gameWon = true;
+		winnerLocation = "Inverse Diagonal";
+	}
+
 	if (gameWon)
 	{
 		LOG(INFO) << std::endl << "\tWIN: " << winnerLocation << std::endl;
