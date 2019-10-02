@@ -464,4 +464,12 @@ void markTheWinner(SDL_Renderer *m_window_renderer, std::string location)
 		SDL_RenderFillRect(m_window_renderer, &lineHorizontal);
 		SDL_RenderPresent(m_window_renderer);
 	}
+	else if (location.compare("Normal Diagonal") == 0)
+	{
+		LOG(INFO) << "Marking the normal diagonal...";
+
+		SDL_SetRenderDrawColor(m_window_renderer, 20, 255, 0, 255);
+		SDL_RenderDrawLine(m_window_renderer, 30, 460, 610, 20);
+		SDL_RenderPresent(m_window_renderer);
+	}
 }
