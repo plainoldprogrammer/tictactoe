@@ -286,6 +286,8 @@ int main(int argc,char *argv[])
 	delete window;
 
 	LOG(INFO) << "End of the game";
+
+	return 0;
 }
 
 void checkGameState()
