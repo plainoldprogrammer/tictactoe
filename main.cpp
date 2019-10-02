@@ -276,6 +276,13 @@ int main(int argc,char *argv[])
 						checkGameState(m_window_renderer);
 					}
 					break;
+				case SDL_KEYDOWN:
+					if (e.key.keysym.scancode == SDL_SCANCODE_ESCAPE)
+					{
+						keep_window_open = false;
+						LOG(INFO) << "Escape from the game";
+					}
+					break;
 			}
 
 			SDL_UpdateWindowSurface(window);
