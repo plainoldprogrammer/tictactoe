@@ -397,9 +397,29 @@ void markTheWinner(SDL_Renderer *m_window_renderer, std::string location)
 	else if (location.compare("Second Row") == 0)
 	{
 		LOG(INFO) << "Marking the second row...";
+
+		SDL_Rect lineHorizontal;
+		lineHorizontal.x = 20;
+		lineHorizontal.y = 230;
+		lineHorizontal.w = 600;
+		lineHorizontal.h = 20;
+
+		SDL_SetRenderDrawColor(m_window_renderer, 0, 255, 0, 255);
+		SDL_RenderFillRect(m_window_renderer, &lineHorizontal);
+		SDL_RenderPresent(m_window_renderer);
 	}
 	else if (location.compare("Third Row") == 0)
 	{
 		LOG(INFO) << "Marking the third row...";
+
+		SDL_Rect lineHorizontal;
+		lineHorizontal.x = 20;
+		lineHorizontal.y = 390;
+		lineHorizontal.w = 600;
+		lineHorizontal.h = 20;
+
+		SDL_SetRenderDrawColor(m_window_renderer, 0, 255, 0, 255);
+		SDL_RenderFillRect(m_window_renderer, &lineHorizontal);
+		SDL_RenderPresent(m_window_renderer);
 	}
 }
