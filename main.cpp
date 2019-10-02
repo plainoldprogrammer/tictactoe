@@ -472,4 +472,12 @@ void markTheWinner(SDL_Renderer *m_window_renderer, std::string location)
 		SDL_RenderDrawLine(m_window_renderer, 30, 460, 610, 20);
 		SDL_RenderPresent(m_window_renderer);
 	}
+	else if (location.compare("Inverse Diagonal") == 0)
+	{
+		LOG(INFO) << "Marking the inverse diagonal...";
+
+		SDL_SetRenderDrawColor(m_window_renderer, 20, 255, 0, 255);
+		SDL_RenderDrawLine(m_window_renderer, 30, 20, 610, 460);
+		SDL_RenderPresent(m_window_renderer);
+	}
 }
