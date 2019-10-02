@@ -331,7 +331,7 @@ void checkGameState()
 	}
 
 	// Check if there is a winner by diagonal
-	if ( (logicalBoard[0][2] == logicalBoard[1][1]) && (logicalBoard[1][1] == logicalBoard[0][2]) && (logicalBoard[0][2] != EmptyPiece) )
+	if ( (logicalBoard[2][0] == logicalBoard[1][1]) && (logicalBoard[1][1] == logicalBoard[0][2]) && (logicalBoard[0][2] != EmptyPiece) )
 	{
 		gameWon = true;
 		winnerLocation = "Normal Diagonal";
