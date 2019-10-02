@@ -454,8 +454,6 @@ void markTheWinner(SDL_Renderer *m_window_renderer, std::string location)
 	{
 		LOG(INFO) << "Marking the third column...";
 
-		LOG(INFO) << "Marking the second column...";
-
 		SDL_Rect lineHorizontal;
 		lineHorizontal.x = 520;
 		lineHorizontal.y = 20;
