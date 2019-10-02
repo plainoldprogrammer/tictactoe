@@ -17,8 +17,9 @@ Piece logicalBoard[3][3] = {
 						{ EmptyPiece, EmptyPiece, EmptyPiece }
 					};
 
-void checkGameState();
+void checkGameState(SDL_Renderer *);
 void printBoard();
+void markTheWinner(SDL_Renderer *, std::string);
 
 int main(int argc,char *argv[])
 {
@@ -272,7 +273,7 @@ int main(int argc,char *argv[])
 						}
 
 						printBoard();
-						checkGameState();
+						checkGameState(m_window_renderer);
 					}
 					break;
 			}
@@ -290,7 +291,7 @@ int main(int argc,char *argv[])
 	return 0;
 }
 
-void checkGameState()
+void checkGameState(SDL_Renderer *m_window_renderer)
 {
 	Piece winnerPiece = EmptyPiece;
 	bool gameWon = false;
@@ -345,6 +346,7 @@ void checkGameState()
 	if (gameWon)
 	{
 		LOG(INFO) << std::endl << "\tWIN: " << winnerLocation << std::endl;
+		markTheWinner(m_window_renderer, winnerLocation);
 	}
 }
 
@@ -371,5 +373,33 @@ void printBoard()
 		}
 
 		std::cout << std::endl;
+	}
+}
+
+void markTheWinner(SDL_Renderer *m_window_renderer, std::string location)
+{
+	LOG(INFO) << "Marking the winner on " << location;
+
+	if (location.compare("First Row") == 0)
+	{
+		LOG(INFO) << "Marking the first row...";
+
+		SDL_Rect lineHorizontal;
+		lineHorizontal.x = 20;
+		lineHorizontal.y = 70;
+		lineHorizontal.w = 600;
+		lineHorizontal.h = 20;
+
+		SDL_SetRenderDrawColor(m_window_renderer, 0, 255, 0, 255);
+		SDL_RenderFillRect(m_window_renderer, &lineHorizontal);
+		SDL_RenderPresent(m_window_renderer);
+	}
+	else if (location.compare("Second Row") == 0)
+	{
+		LOG(INFO) << "Marking the second row...";
+	}
+	else if (location.compare("Third Row") == 0)
+	{
+		LOG(INFO) << "Marking the third row...";
 	}
 }
