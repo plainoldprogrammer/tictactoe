@@ -1,2 +1,3 @@
 # TicTacToe
-*TicTacToe* is a *C++ (SDL)* desktop videogame clone.
+
+**TicTacToe* *is a *C++ (SDL)* desktop videogame clone.
