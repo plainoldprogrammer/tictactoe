@@ -1,2 +1,2 @@
-# tictactoe
-Tic-tac-toe game implementation.
+# TicTacToe
+*TicTacToe* is a *C++ (SDL)* desktop videogame clone.
